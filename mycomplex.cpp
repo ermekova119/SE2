@@ -1,18 +1,32 @@
+/*!
+    @file
+    @brief файл с описанием методов класса Complex
+*/
 #include <iostream>
 #include <cmath>
 #include "mycomplex.h"
 using namespace std;
+/*!
+    @brief конструктор класса
+    @param aRe действительная составляющая
+    @param aIm действительная составляющая
+*/
 
 Complex::Complex(double aRe, double aIm) {
     Re = aRe;
     Im = aIm;
 }
-
+/*!
+    @brief конструктор класса
+    @param aRval комплексное число
+*/
 Complex::Complex(const Complex& aRval) {
     Re = aRval.Re;
     Im = aRval.Im;
 }
-
+/*!
+    @brief деструктор класса
+*/
 Complex::~Complex() {
     Re = 0.0;
     Im = 0.0;
@@ -22,7 +36,10 @@ void Complex::Set(double aRe, double aIm) {
     Re = aRe;
     Im = aIm;
 }
-
+/*!
+    @brief возвращает модуль комплексного числа
+    @brief  определение методов для работы с комплексными числами, таких как вычисление модуля, операции сложения, вычитания, умножения и деления
+*/
 Complex::operator double() {
     return abs();
 }
@@ -131,7 +148,9 @@ Complex& Complex::operator=(const double& aRval) {
     Im = 0.0;
     return *this;
 }
-
+/*!
+    @brief gерегрузка операторов ввода и вывода для класса Complex
+*/
 istream& operator>>(istream& stream, Complex& a) {
     char tmp[256];
     stream >> a.Re >> a.Im >> tmp;
@@ -144,7 +163,9 @@ ostream& operator<<(ostream& stream, Complex& a) {
     stream << a.Im << 'i';
     return stream;
 }
-
+/*!
+    @brief перегрузка операторов для взаимодействия чисел различных типов (комплексных и действительных)
+*/
 Complex operator+(const double& aLval, const Complex& aRval) {
     Complex Result;
     Result.Re = aLval + aRval.Re;

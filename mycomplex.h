@@ -1,12 +1,25 @@
+/*!
+    @file
+    @brief заголовочный файл класса Complex
+*/
+
 #ifndef _MY_COMPLEX_H_
 #define _MY_COMPLEX_H_
-
 #include <iostream>
 using namespace std;
+/*!
+    @brief класс комплексного числа
+*/
 
 class Complex
 {
+/*!
+    @brief действительна€ составл€юща€  
+*/
     double Re;
+/*!
+    @brief мнима€ составл€юща€
+*/
     double Im;
 
 public:
